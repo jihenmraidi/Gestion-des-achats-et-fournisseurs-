@@ -5,6 +5,7 @@ namespace GestionAchats.Models
 {
     public class Fournisseur
     {
+        public int Id { get; set; }
         public string Nom { get; set; }
         public string Contact { get; set; }
         public string Telephone { get; set; }

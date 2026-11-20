@@ -1,0 +1,7 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+# NB : le fichier SQLite (*.db) n'est volontairement PAS ignoré : il fait partie du livrable.

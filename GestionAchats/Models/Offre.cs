@@ -5,6 +5,7 @@ namespace GestionAchats.Models
 {
     public class Offre
     {
+        public int Id { get; set; }
         public decimal PrixUnitaire { get; set; }
         public int DelaiJours { get; set; }
 
@@ -13,8 +14,10 @@ namespace GestionAchats.Models
         public decimal FraisTransport { get; set; }
         public double Score { get; set; }
 
-        // Liens vers les autres classes
+        // Clés étrangères + liens vers les autres classes
+        public int DemandeId { get; set; }
         public DemandeAchat Demande { get; set; }
+        public int FournisseurId { get; set; }
         public Fournisseur Fournisseur { get; set; }
 
         // Coût total = prix net x quantité demandée + transport
