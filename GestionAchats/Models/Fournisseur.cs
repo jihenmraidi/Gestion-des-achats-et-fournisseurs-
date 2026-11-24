@@ -12,7 +12,8 @@ namespace GestionAchats.Models
         public string Email { get; set; }
         public string ConditionsPaiement { get; set; }
         public bool Actif { get; set; } = true;
-
+        
+        //Un-à-Plusieurs
         public List<Offre> Offres { get; set; } = new List<Offre>();
         public List<CommandeAchat> Commandes { get; set; } = new List<CommandeAchat>();
         public List<Evaluation> Evaluations { get; set; } = new List<Evaluation>();

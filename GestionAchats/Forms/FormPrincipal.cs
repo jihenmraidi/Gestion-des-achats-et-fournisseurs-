@@ -27,19 +27,21 @@ namespace GestionAchats.Forms
             fenetre.Show();
         }
 
-        private void itemFournisseurs_Click(object sender, EventArgs e)
-        {
-            OuvrirFenetre<FormFournisseurs>();
-        }
+        // ----- Menu Gestion -----
+        private void itemFournisseurs_Click(object sender, EventArgs e) { OuvrirFenetre<FormFournisseurs>(); }
+        private void itemArticles_Click(object sender, EventArgs e) { OuvrirFenetre<FormArticles>(); }
+        private void itemUtilisateurs_Click(object sender, EventArgs e) { OuvrirFenetre<FormUtilisateurs>(); }
+        private void itemQuitter_Click(object sender, EventArgs e) { Close(); }
 
-        private void itemArticles_Click(object sender, EventArgs e)
-        {
-            OuvrirFenetre<FormArticles>();
-        }
+        // ----- Menu Achats -----
+        private void itemDemandes_Click(object sender, EventArgs e) { OuvrirFenetre<FormDemandes>(); }
+        private void itemOffres_Click(object sender, EventArgs e) { OuvrirFenetre<FormOffres>(); }
+        private void itemCommandes_Click(object sender, EventArgs e) { OuvrirFenetre<FormCommandes>(); }
+        private void itemReceptions_Click(object sender, EventArgs e) { OuvrirFenetre<FormReceptions>(); }
 
-        private void itemQuitter_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        // ----- Menu Suivi -----
+        private void itemEvaluations_Click(object sender, EventArgs e) { OuvrirFenetre<FormEvaluations>(); }
+        private void itemHistorique_Click(object sender, EventArgs e) { OuvrirFenetre<FormHistorique>(); }
+        private void itemTableauBord_Click(object sender, EventArgs e) { OuvrirFenetre<FormTableauBord>(); }
     }
 }

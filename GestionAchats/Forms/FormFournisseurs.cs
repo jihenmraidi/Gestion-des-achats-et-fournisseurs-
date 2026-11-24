@@ -26,10 +26,16 @@ namespace GestionAchats.Forms
         }
 
         // ---------- READ : liste ----------
+        //Cette méthode ChargerListe remplit la grille avec les fournisseurs lus dans la base.
+        //Elle est appelée au chargement du formulaire, à chaque saisie dans la zone de recherche,
+        //et après chaque enregistrement ou suppression.
         private void ChargerListe(int idSelection = 0)
         {
+            //On lit ce que l'utilisateur a tapé dans la zone Rechercher
+            //et on enlève les espaces superflus au début et à la fin.
             string filtre = txtRecherche.Text.Trim();
 
+            //On crée un contexte, c'est-à-dire une connexion de travail vers GestionAchats.db
             using (var db = new GestionAchatsContext())
             {
                 IQueryable<Fournisseur> requete = db.Fournisseurs.AsNoTracking();

@@ -7,6 +7,7 @@ namespace GestionAchats.Data
 {
     public class GestionAchatsContext : DbContext
     {
+        // quelle classe représente quelle table de la base de données
         public DbSet<Utilisateur> Utilisateurs { get; set; }
         public DbSet<Article> Articles { get; set; }
         public DbSet<Fournisseur> Fournisseurs { get; set; }
@@ -17,8 +18,7 @@ namespace GestionAchats.Data
         public DbSet<Reception> Receptions { get; set; }
         public DbSet<Evaluation> Evaluations { get; set; }
 
-        // Le fichier GestionAchats.db est placé dans le dossier du projet (là où se trouve le .csproj),
-        // pour qu'il soit le même pour "dotnet ef", pour l'application et pour GitHub.
+        
         public static string CheminBase
         {
             get { return Path.Combine(TrouverDossierProjet(), "GestionAchats.db"); }
@@ -33,9 +33,9 @@ namespace GestionAchats.Data
                     return dossier.FullName;
                 dossier = dossier.Parent;
             }
-            return AppContext.BaseDirectory; // application déployée hors du dossier du projet
+            return AppContext.BaseDirectory; 
         }
-
+        // type de base de données : SQLite
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlite("Data Source=" + CheminBase);
@@ -71,6 +71,7 @@ namespace GestionAchats.Data
             // ---------- Fournisseur ----------
             mb.Entity<Fournisseur>(e =>
             {
+                //définir la structure des colonnes dans la table des fournisseurs
                 e.Property(f => f.Nom).IsRequired().HasMaxLength(100);
                 e.HasIndex(f => f.Nom).IsUnique();
                 e.Property(f => f.Contact).HasMaxLength(100);
